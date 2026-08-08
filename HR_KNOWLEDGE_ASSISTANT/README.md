@@ -76,6 +76,8 @@ Oracle Database 26ai
         ├── HR Documents
         ├── Document Chunks
         └── VECTOR Embeddings
+```
+
 ## Project Structure
 
 ```text
@@ -156,60 +158,95 @@ HR_KNOWLEDGE_ASSISTANT/
 
 ### Upload PDF
 
+```
 Receive PDF
-        │
-        ▼
-Generate SHA256 hash
-        │
-        ▼
-Duplicate Detection
-        │
-        ▼
-Store metadata
-        │
-        ▼
-Extract text
-        │
-        ▼
-Chunk document
-        │
-        ▼
-Generate embeddings
-        │
-        ▼
-Store vectors
 
+        │
+        ▼
+        
+Generate SHA256 hash
+
+        │
+        ▼
+        
+Duplicate Detection
+
+        │
+        ▼
+        
+Store metadata
+
+        │
+        ▼
+        
+Extract text
+
+        │
+        ▼
+        
+Chunk document
+
+        │
+        ▼
+        
+Generate embeddings
+
+        │
+        ▼
+        
+Store vectors
+```
 
 ### CHAT 
 
+```
 Employee question
+
         │
         ▼
+        
 Generate query embedding
+
         │
         ▼
+        
 Oracle AI Vector Search
+
         │
         ▼
+        
 Keyword search
+
         │
         ▼
+        
 Hybrid ranking
+
         │
         ▼
+        
 Top relevant chunks
+
         │
         ▼
+        
 Prompt construction
+
         │
         ▼
+        
 Qwen 2.5:3b (Ollama)
+
         │
         ▼
+        
 Generated answer
+
         │
         ▼
+        
 Store chat history
+```
 
 ## RAG Pipeline
 
@@ -246,24 +283,33 @@ Relevant chunks are passed to the locally running Qwen 2.5:3b model through Olla
 ## Backend Architecture
 
 The backend follows a modular architecture.
-
+```
 Client(Oracle APEX)
+
          │
          ▼
+         
 API Layer
 (Receives HTTP requests)
+
          │
          ▼
+
 Service Layer
 (Contains business logic)
+
          │
          ▼
+
 Database Layer
 (Communicates with Oracle Database)
+
          │
          ▼
+
 AI Layer
 (Retrieves HR documents and generates answers using a local language model)
+```
 
 ## Database Design
 
@@ -683,4 +729,5 @@ into Oracle APEX
 
 B.Tech Computer Science and Engineering
 Indraprastha Institute of Information Technology Delhi (IIIT Delhi)
+
 NTPC Limited
